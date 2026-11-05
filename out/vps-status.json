@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "hostname": "vpsfree-1",
   "os": "Ubuntu 24.04.5 LTS",
   "kernel": "7.0.0-1017-azure",
@@ -9,9 +9,9 @@
   "ssh_port": 22,
   "ssh_user": "vps",
   "ssh_listen": "ok",
-  "public_ip": "172.171.15.8",
-  "bore_server": "bore.pub",
-  "bore_port": "49257",
+  "public_ip": "",
+  "bore_server": "",
+  "bore_port": "",
   "started_at": "2026-11-05T22:25:50Z",
   "expires_at": "2026-11-06T04:05:50Z",
   "duration_menit": 340,
@@ -23,12 +23,13 @@
   "akses": {
     "mode": "bore",
     "bore": {
-      "status": "ok",
-      "server": "bore.pub",
-      "port": "49257",
+      "status": "offline",
+      "server": "",
+      "port": "",
       "command_root": "ssh -p 49257 root@bore.pub",
       "note": "Akses SSH via Bore tunnel: ssh -p 49257 root@bore.pub"
     }
   },
-  "ssh_command": "ssh -p 49257 root@bore.pub"
+  "ssh_command": "",
+  "stopped_at": "2026-11-05T22:46:52Z"
 }
