@@ -321,8 +321,10 @@ else
     # Ensure agy is executable
     [ -f /root/.local/bin/agy ] && chmod +x /root/.local/bin/agy
     # Ensure PATH includes /root/.local/bin
+    # /etc/environment TIDAK mendukung $PATH expansion (PAM) — tulis literal penuh
+    # agar PATH semua user (termasuk SSH login) tidak rusak jadi literal "$PATH"
     if ! grep -q '/root/.local/bin' /etc/environment 2>/dev/null; then
-      echo 'PATH="/root/.local/bin:$PATH"' | sudo tee /etc/environment >/dev/null 2>&1 || true
+      echo 'PATH="/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"' | sudo tee /etc/environment >/dev/null 2>&1 || true
     fi
     export PATH="/root/.local/bin:$PATH"
     AGY_VER="$(/root/.local/bin/agy --version 2>/dev/null | head -1 || echo 'installed')"
